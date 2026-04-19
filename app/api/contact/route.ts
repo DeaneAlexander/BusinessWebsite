@@ -72,6 +72,8 @@ export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY;
   const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL ?? siteConfig.email;
   const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+  let notificationEmailSent = false;
+  let notificationEmailFailed = false;
 
   if (resendApiKey) {
     const resend = new Resend(resendApiKey);
@@ -86,6 +88,9 @@ export async function POST(request: Request) {
 
     if (emailResult.error) {
       console.error("Resend lead notification failed:", emailResult.error);
+      notificationEmailFailed = true;
+    } else {
+      notificationEmailSent = true;
     }
   } else {
     console.log("RESEND_API_KEY not configured. Skipping lead notification email.");
@@ -102,6 +107,17 @@ export async function POST(request: Request) {
 
   if (!crmWebhookUrl) {
     console.log("CRM_WEBHOOK_URL not configured. Lead payload:", lead);
+  }
+
+  if (!notificationEmailSent && !crmWebhookUrl) {
+    return NextResponse.json(
+      {
+        error: notificationEmailFailed
+          ? "We received the inquiry, but the email notification failed. Please check the Resend configuration."
+          : "We received the inquiry, but email notifications are not configured yet.",
+      },
+      { status: 502 },
+    );
   }
 
   let autoResponseSent = false;
