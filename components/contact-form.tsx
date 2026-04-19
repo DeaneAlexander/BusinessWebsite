@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { trackEvent } from "@/components/tracking/events";
+import { siteConfig } from "@/lib/site";
 
 type ContactFormValues = {
   firstName: string;
@@ -19,6 +20,14 @@ type ContactFormValues = {
   goals: string;
   source: string;
   consent: boolean;
+};
+
+type Web3FormsResponse = {
+  success?: boolean;
+  message?: string;
+  body?: {
+    message?: string;
+  };
 };
 
 const serviceOptions = [
@@ -56,6 +65,7 @@ const timelineOptionsByService: Record<(typeof serviceOptions)[number], string[]
 export function ContactForm() {
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
+  const web3FormsAccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   const {
     register,
@@ -94,24 +104,49 @@ export function ContactForm() {
     setServerMessage(null);
     setServerError(null);
 
+    if (!web3FormsAccessKey) {
+      setServerError(
+        "Contact form is not configured yet. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to enable email delivery.",
+      );
+      return;
+    }
+
     const submission = {
-      ...values,
+      access_key: web3FormsAccessKey,
+      subject: `New project brief from ${siteConfig.name}`,
+      from_name: siteConfig.name,
+      replyto: values.email,
+      botcheck: "",
+      name: `${values.firstName} ${values.lastName}`,
+      email: values.email,
+      phone: values.phone,
+      company: values.company,
+      website: values.website,
+      service: values.service,
+      budget: values.budget,
+      timeline: values.timeline,
+      startDate: values.startDate,
+      goals: values.goals,
+      source: values.source,
+      consent: values.consent ? "Yes" : "No",
       pageUrl: window.location.href,
       pagePath: window.location.pathname,
     };
 
-    const response = await fetch("/api/contact", {
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify(submission),
     });
 
-    const payload = (await response.json()) as { message?: string; error?: string };
+    const payload = (await response.json()) as Web3FormsResponse;
+    const responseMessage = payload.message ?? payload.body?.message;
 
-    if (!response.ok) {
-      setServerError(payload.error ?? "Something went wrong. Please try again.");
+    if (!response.ok || !payload.success) {
+      setServerError(responseMessage ?? "Something went wrong. Please try again.");
       return;
     }
 
@@ -125,7 +160,7 @@ export function ContactForm() {
       service_interest: values.service,
     });
 
-    setServerMessage(payload.message ?? "Thanks. We will be in touch shortly.");
+    setServerMessage(responseMessage ?? "Thanks. We will be in touch shortly.");
     reset();
   });
 
