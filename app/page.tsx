@@ -1,65 +1,245 @@
-import Image from "next/image";
+import { TrackedExternalLink } from "@/components/tracking/tracked-external-link";
+import { TrackedLink } from "@/components/tracking/tracked-link";
+import {
+  marketContext,
+  marketKpis,
+  portfolioItems,
+  proofStats,
+  services,
+  siteConfig,
+  testimonials,
+} from "@/lib/site";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <section className="hero-grid overflow-hidden bg-slate-950 text-white">
+        <div className="container-shell grid gap-14 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
+          <div className="space-y-8">
+            <div className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
+              Websites built to convert attention into qualified pipeline
+            </div>
+            <div className="space-y-6">
+              <h1 className="max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl">
+                Turn your website into your best-performing sales asset.
+              </h1>
+              <p className="max-w-2xl text-lg leading-8 text-slate-300">
+                {siteConfig.name} designs high-performance marketing sites for service businesses
+                that need more booked calls, stronger trust, and cleaner CRM handoff.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <TrackedLink
+                eventName="contact_cta_click"
+                eventParams={{ cta_location: "home_hero", cta_type: "contact" }}
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+              >
+                Get a Tailored Proposal
+              </TrackedLink>
+              <TrackedLink
+                eventName="booking_cta_click"
+                eventParams={{ cta_location: "home_hero", cta_type: "booking" }}
+                href={siteConfig.bookingPagePath}
+                className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
+              >
+                Book a Strategy Call
+              </TrackedLink>
+              <TrackedExternalLink
+                eventName="whatsapp_click"
+                eventParams={{ cta_location: "home_hero", cta_type: "whatsapp" }}
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
+              >
+                WhatsApp Us
+              </TrackedExternalLink>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {proofStats.map((stat) => (
+                <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-2xl font-semibold text-white">{stat.value}</p>
+                  <p className="mt-2 text-sm text-slate-300">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="section-card rounded-[2rem] p-8 text-slate-950 shadow-2xl shadow-cyan-950/20">
+            <div className="space-y-8">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+                  Why teams hire us
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+                  Clear offer positioning, persuasive pages, and lead capture that sales can use.
+                </h2>
+              </div>
+              <div className="grid gap-4">
+                {services.slice(0, 3).map((service) => (
+                  <div key={service.name} className="rounded-3xl border border-slate-200 p-5">
+                    <p className="font-semibold">{service.name}</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{service.summary}</p>
+                  </div>
+                ))}
+              </div>
+              <TrackedLink
+                eventName="services_cta_click"
+                eventParams={{ cta_location: "home_services_panel", cta_type: "services" }}
+                href="/services"
+                className="inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-700"
+              >
+                Explore services
+              </TrackedLink>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="container-shell py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Built for growth</p>
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              Every page is designed to answer buyer questions and reduce sales friction.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {services.map((service) => (
+              <div key={service.name} className="section-card rounded-3xl p-6">
+                <p className="text-lg font-semibold text-slate-950">{service.name}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{service.summary}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="bg-slate-100 py-20">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              Informational Section
+            </p>
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              {marketContext.heading}
+            </h2>
+            <p className="text-sm leading-7 text-slate-600">
+              In Antigua, growth usually comes from being known, trusted, and easy to reach, not
+              from chasing scale for its own sake. These KPIs reflect the kind of disciplined,
+              relationship-driven business development that fits a Caribbean market.
+            </p>
+            <p className="text-sm italic text-slate-500">{marketContext.source}</p>
+            <TrackedLink
+              eventName="case_study_cta_click"
+              eventParams={{ cta_location: "home_market_context", cta_type: "case_study" }}
+              href="/case-study"
+              className="inline-flex items-center text-sm font-semibold text-slate-950 transition hover:text-cyan-700"
+            >
+              Read the full case study
+            </TrackedLink>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {marketKpis.slice(0, 4).map((row) => (
+              <article
+                key={row.metric}
+                className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  {row.metric}
+                </p>
+                <p className="mt-3 inline-flex rounded-full bg-cyan-100 px-3 py-1 text-2xl font-semibold text-cyan-800">
+                  {row.target}
+                </p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{row.rationale}</p>
+                <p className="mt-4 text-sm font-medium text-slate-950">{row.cadence} review</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container-shell space-y-10">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Selected work</p>
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                Selected work across websites, apps, and interactive product builds.
+              </h2>
+            </div>
+            <TrackedLink
+              eventName="portfolio_cta_click"
+              eventParams={{ cta_location: "home_portfolio_header", cta_type: "portfolio" }}
+              href="/portfolio"
+              className="text-sm font-semibold text-slate-950 transition hover:text-cyan-700"
+            >
+              View project examples
+            </TrackedLink>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {portfolioItems.map((item) => (
+              <article key={item.name} className="rounded-[2rem] border border-slate-200 p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  {item.category}
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold text-slate-950">{item.name}</h3>
+                <p className="mt-3 text-sm font-medium text-cyan-700">{item.result}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell py-20">
+        <div className="grid gap-6 lg:grid-cols-2">
+          {testimonials.map((testimonial) => (
+            <blockquote key={testimonial.author} className="rounded-[2rem] bg-slate-950 p-8 text-white">
+              <p className="text-xl leading-9 text-slate-100">&ldquo;{testimonial.quote}&rdquo;</p>
+              <footer className="mt-6">
+                <p className="font-semibold">{testimonial.author}</p>
+                <p className="text-sm text-slate-300">{testimonial.role}</p>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-shell pb-8">
+        <div className="rounded-[2rem] bg-cyan-400 px-8 py-10 text-slate-950">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700">Next step</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Ready for a site that helps your team close more business?
+              </h2>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <TrackedLink
+                eventName="case_study_cta_click"
+                eventParams={{ cta_location: "home_bottom_cta", cta_type: "case_study" }}
+                href="/case-study"
+                className="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
+                Read Case Study
+              </TrackedLink>
+              <TrackedLink
+                eventName="contact_cta_click"
+                eventParams={{ cta_location: "home_bottom_cta", cta_type: "contact" }}
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-slate-950/15 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white/40"
+              >
+                Start Your Project
+              </TrackedLink>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
