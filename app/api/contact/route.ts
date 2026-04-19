@@ -74,6 +74,7 @@ export async function POST(request: Request) {
   const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
   let notificationEmailSent = false;
   let notificationEmailFailed = false;
+  let notificationErrorMessage: string | null = null;
 
   if (resendApiKey) {
     const resend = new Resend(resendApiKey);
@@ -89,6 +90,10 @@ export async function POST(request: Request) {
     if (emailResult.error) {
       console.error("Resend lead notification failed:", emailResult.error);
       notificationEmailFailed = true;
+      notificationErrorMessage =
+        typeof emailResult.error.message === "string"
+          ? emailResult.error.message
+          : "Unknown Resend error.";
     } else {
       notificationEmailSent = true;
     }
@@ -113,7 +118,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error: notificationEmailFailed
-          ? "We received the inquiry, but the email notification failed. Please check the Resend configuration."
+          ? `We received the inquiry, but the email notification failed. ${notificationErrorMessage ?? "Please check the Resend configuration."}`
           : "We received the inquiry, but email notifications are not configured yet.",
       },
       { status: 502 },
