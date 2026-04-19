@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+import { siteConfig } from "@/lib/site";
 
 type ContactPayload = {
   firstName?: string;
@@ -66,6 +69,27 @@ export async function POST(request: Request) {
 
   const crmWebhookUrl = process.env.CRM_WEBHOOK_URL;
   const autoResponseWebhookUrl = process.env.AUTO_RESPONSE_WEBHOOK_URL;
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL ?? siteConfig.email;
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+
+  if (resendApiKey) {
+    const resend = new Resend(resendApiKey);
+    const emailResult = await resend.emails.send({
+      from: fromEmail,
+      to: notificationEmail,
+      replyTo: lead.contact.email,
+      subject: `New website lead from ${lead.contact.firstName} ${lead.contact.lastName}`,
+      text: buildLeadNotificationText(lead),
+      html: buildLeadNotificationHtml(lead),
+    });
+
+    if (emailResult.error) {
+      console.error("Resend lead notification failed:", emailResult.error);
+    }
+  } else {
+    console.log("RESEND_API_KEY not configured. Skipping lead notification email.");
+  }
 
   const crmResponse = crmWebhookUrl ? await postJson(crmWebhookUrl, lead) : null;
 
@@ -127,4 +151,131 @@ async function postJson(url: string, payload: unknown) {
     console.error(`Webhook request failed for ${url}:`, error);
     return null;
   }
+}
+
+function buildLeadNotificationText(lead: {
+  submittedAt: string;
+  contact: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    company: string;
+    website: string;
+  };
+  qualification: {
+    service: string;
+    budget: string;
+    timeline: string;
+    startDate: string;
+    goals: string;
+    source: string;
+  };
+  attribution: {
+    pageUrl: string;
+    pagePath: string;
+    referrer: string;
+    userAgent: string;
+  };
+  consent: boolean;
+}) {
+  return [
+    "New website lead received",
+    "",
+    `Submitted: ${lead.submittedAt}`,
+    `Name: ${lead.contact.firstName} ${lead.contact.lastName}`,
+    `Email: ${lead.contact.email}`,
+    `Phone: ${lead.contact.phone}`,
+    `Company: ${lead.contact.company}`,
+    `Website: ${lead.contact.website || "Not provided"}`,
+    `Service: ${lead.qualification.service || "Not provided"}`,
+    `Budget: ${lead.qualification.budget || "Not provided"}`,
+    `Timeline: ${lead.qualification.timeline || "Not provided"}`,
+    `Start date: ${lead.qualification.startDate || "Not provided"}`,
+    `Source: ${lead.qualification.source || "Not provided"}`,
+    `Consent: ${lead.consent ? "Yes" : "No"}`,
+    `Page URL: ${lead.attribution.pageUrl || "Not provided"}`,
+    `Page path: ${lead.attribution.pagePath || "Not provided"}`,
+    `Referrer: ${lead.attribution.referrer || "Not provided"}`,
+    `User agent: ${lead.attribution.userAgent || "Not provided"}`,
+    "",
+    "Goals",
+    lead.qualification.goals,
+  ].join("\n");
+}
+
+function buildLeadNotificationHtml(lead: {
+  submittedAt: string;
+  contact: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    company: string;
+    website: string;
+  };
+  qualification: {
+    service: string;
+    budget: string;
+    timeline: string;
+    startDate: string;
+    goals: string;
+    source: string;
+  };
+  attribution: {
+    pageUrl: string;
+    pagePath: string;
+    referrer: string;
+    userAgent: string;
+  };
+  consent: boolean;
+}) {
+  const rows = [
+    ["Submitted", lead.submittedAt],
+    ["Name", `${lead.contact.firstName} ${lead.contact.lastName}`],
+    ["Email", lead.contact.email],
+    ["Phone", lead.contact.phone],
+    ["Company", lead.contact.company],
+    ["Website", lead.contact.website || "Not provided"],
+    ["Service", lead.qualification.service || "Not provided"],
+    ["Budget", lead.qualification.budget || "Not provided"],
+    ["Timeline", lead.qualification.timeline || "Not provided"],
+    ["Start date", lead.qualification.startDate || "Not provided"],
+    ["Source", lead.qualification.source || "Not provided"],
+    ["Consent", lead.consent ? "Yes" : "No"],
+    ["Page URL", lead.attribution.pageUrl || "Not provided"],
+    ["Page path", lead.attribution.pagePath || "Not provided"],
+    ["Referrer", lead.attribution.referrer || "Not provided"],
+    ["User agent", lead.attribution.userAgent || "Not provided"],
+  ];
+
+  return `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0f172a;">
+      <h2 style="margin-bottom: 16px;">New website lead received</h2>
+      <table style="border-collapse: collapse; width: 100%; max-width: 720px;">
+        <tbody>
+          ${rows
+            .map(
+              ([label, value]) => `
+                <tr>
+                  <td style="padding: 8px; border: 1px solid #e2e8f0; font-weight: 600; width: 180px;">${escapeHtml(label)}</td>
+                  <td style="padding: 8px; border: 1px solid #e2e8f0;">${escapeHtml(value)}</td>
+                </tr>`,
+            )
+            .join("")}
+        </tbody>
+      </table>
+      <h3 style="margin: 24px 0 8px;">Goals</h3>
+      <p style="white-space: pre-wrap; margin: 0;">${escapeHtml(lead.qualification.goals)}</p>
+    </div>
+  `;
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
