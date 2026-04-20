@@ -7,7 +7,7 @@ export const siteConfig = {
   bookingUrl: "https://calendly.com/deaneaustenalexander/strategy-call",
   whatsappUrl:
     "https://wa.me/12687199248?text=Hi%20ALX%20Digital%20Incorporated%2C%20I%27d%20like%20to%20talk%20about%20a%20project.",
-  email: "DeaneAustenAlexander@gmail.com",
+  email: "deanealex@alxdigiinc.com",
   phone: "1-268-719-9248",
   location: "Based in Antigua and Barbuda, serving clients across the Caribbean and remotely",
   socialProof: {
