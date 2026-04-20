@@ -2,14 +2,14 @@ export const siteConfig = {
   name: "ALX Digital Incorporated",
   domain: "https://www.northstargrowthstudio.com",
   description:
-    "Web development, app development, game development, software support, and technical consulting for businesses that need practical digital solutions.",
+    "Web development, app development, Unity game development, software support, and technical consulting for businesses that need practical digital solutions.",
   bookingPagePath: "/book-call",
   bookingUrl: "https://calendly.com/deaneaustenalexander/strategy-call",
   whatsappUrl:
     "https://wa.me/12687199248?text=Hi%20ALX%20Digital%20Incorporated%2C%20I%27d%20like%20to%20talk%20about%20a%20project.",
   email: "DeaneAustenAlexander@gmail.com",
   phone: "1-268-719-9248",
-  location: "Serving clients remotely",
+  location: "Based in Antigua and Barbuda, serving clients across the Caribbean and remotely",
   socialProof: {
     revenueLift: "38%",
     leadLift: "2.4x",
@@ -39,7 +39,7 @@ export const services = [
   {
     name: "Game Development",
     summary:
-      "Unreal Engine game development, gameplay systems, interactive experiences",
+      "Unity game development, gameplay systems, interactive experiences",
   },
   {
     name: "Software Support",
@@ -54,7 +54,7 @@ export const services = [
 ] as const;
 
 export const proofStats = [
-  { label: "Products and platforms shipped", value: "20+" },
+  { label: "Projects and products contributed to", value: "20+" },
   { label: "Typical build planning window", value: "2-4 wks" },
   { label: "Support response target", value: "< 48 hrs" },
 ] as const;

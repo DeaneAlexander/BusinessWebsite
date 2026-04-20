@@ -6,7 +6,7 @@ import { services, siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore web development, app development, game development, software support, and technical consulting services.",
+    "Explore web development, app development, Unity game development, software support, and technical consulting services.",
 };
 
 const deliverySteps = [
@@ -23,11 +23,16 @@ export default function ServicesPage() {
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Services</p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Web, app, game, and support services built around real business needs.
+            Web, app, Unity, support, and consulting services built around real business needs.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-slate-300">
-            ALX Digital helps businesses plan, build, refine, and support digital products ranging
-            from websites and portals to internal tools, game builds, and technical delivery plans.
+            ALX Digital helps businesses in Antigua and Barbuda and across the Caribbean plan,
+            build, refine, and support digital products ranging from websites and portals to
+            internal tools, Unity projects, and technical delivery plans.
+          </p>
+          <p className="max-w-2xl text-sm leading-7 text-slate-400">
+            Especially relevant for tourism and hospitality operators, education teams, service
+            businesses, and organizations that need practical support after launch.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
             <TrackedLink

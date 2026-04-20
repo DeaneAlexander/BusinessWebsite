@@ -10,6 +10,29 @@ import {
   testimonials,
 } from "@/lib/site";
 
+const sectorFocus = [
+  {
+    name: "Tourism and Hospitality",
+    description:
+      "Websites, booking journeys, guest-facing tools, and support systems for hotels, villas, tours, and service operators.",
+  },
+  {
+    name: "Education",
+    description:
+      "Clearer digital experiences for schools, training providers, and education teams that need easier communication and stronger operations.",
+  },
+  {
+    name: "Service Businesses",
+    description:
+      "Practical websites, lead capture, and internal workflows for SMEs that need to look credible and respond faster.",
+  },
+  {
+    name: "Internal Product Teams",
+    description:
+      "App builds, Unity-based interactive work, and technical consulting for teams that need scoped execution without unnecessary overhead.",
+  },
+] as const;
+
 export default function HomePage() {
   return (
     <div>
@@ -17,15 +40,21 @@ export default function HomePage() {
         <div className="container-shell grid gap-14 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
           <div className="space-y-8">
             <div className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
-              Websites built to convert attention into qualified pipeline
+              Digital products and support systems for Antigua and the wider Caribbean
             </div>
             <div className="space-y-6">
               <h1 className="max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl">
-                Turn your website into your best-performing sales asset.
+                Websites, apps, Unity builds, and support systems your team can actually use.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                {siteConfig.name} designs high-performance marketing sites for service businesses
-                that need more booked calls, stronger trust, and cleaner CRM handoff.
+                {siteConfig.name} helps businesses in Antigua and Barbuda and across the Caribbean
+                plan, build, and support digital products that improve customer journeys, daily
+                operations, and long-term growth.
+              </p>
+              <p className="max-w-2xl text-base leading-7 text-slate-400">
+                Especially relevant for tourism and hospitality operators, education teams, service
+                businesses, and organizations that need a practical delivery partner instead of
+                generic agency language.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -73,11 +102,12 @@ export default function HomePage() {
                   Why teams hire us
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-                  Clear offer positioning, persuasive pages, and lead capture that sales can use.
+                  Clear technical thinking, stronger customer journeys, and systems staff can
+                  actually use.
                 </h2>
               </div>
-              <div className="grid gap-4">
-                {services.slice(0, 3).map((service) => (
+              <div className="grid gap-4 md:grid-cols-2">
+                {services.map((service) => (
                   <div key={service.name} className="rounded-3xl border border-slate-200 p-5">
                     <p className="font-semibold">{service.name}</p>
                     <p className="mt-2 text-sm leading-7 text-slate-600">{service.summary}</p>
@@ -98,12 +128,47 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell py-20">
+        <div className="space-y-6">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              Sector focus
+            </p>
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              Built for hospitality, education, and service operators that need local context and
+              practical delivery.
+            </h2>
+            <p className="max-w-3xl text-sm leading-7 text-slate-600">
+              ALX Digital is positioned for Caribbean businesses that need credible digital
+              execution, not recycled templates. That includes tourism and hospitality brands,
+              education organizations, SMEs, and teams that need support after launch.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {sectorFocus.map((sector) => (
+              <article key={sector.name} className="section-card rounded-3xl p-6">
+                <p className="text-lg font-semibold text-slate-950">{sector.name}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{sector.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell py-20">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Built for growth</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              Full service mix
+            </p>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-              Every page is designed to answer buyer questions and reduce sales friction.
+              From launch work to ongoing support, the offer now reflects the full ALX Digital
+              service suite.
             </h2>
+            <p className="text-sm leading-7 text-slate-600">
+              Web development, app development, Unity-based game work, software support, and
+              technical consulting are all visible here so cautious teams can enter at the level
+              that fits their current need.
+            </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
@@ -121,7 +186,7 @@ export default function HomePage() {
         <div className="container-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-              Informational Section
+              Caribbean context
             </p>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
               {marketContext.heading}
@@ -168,7 +233,8 @@ export default function HomePage() {
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Selected work</p>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                Selected work across websites, apps, and interactive product builds.
+                Selected work across websites, apps, support systems, and interactive product
+                builds.
               </h2>
             </div>
             <TrackedLink
@@ -216,7 +282,7 @@ export default function HomePage() {
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700">Next step</p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Ready for a site that helps your team close more business?
+                Ready for a digital partner that fits how your business actually operates?
               </h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
