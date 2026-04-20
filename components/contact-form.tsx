@@ -39,27 +39,64 @@ const serviceOptions = [
 ] as const;
 
 const budgetOptionsByService: Record<(typeof serviceOptions)[number], string[]> = {
-  "Web Development": ["$300-$800", "$800-$2,000", "$2,000+"],
-  "App Development": ["$1,500-$3,000", "$3,000-$5,000", "$5,000+"],
-  "Game Development": ["$1,000-$2,000", "$2,000-$3,500", "$3,500+"],
-  "Software Support": ["$200-$800 / mo", "$800-$1,500 / mo", "$1,500-$2,500 / mo", "$2,500+ / mo"],
-  "Technical Consulting": ["$300-$800", "$800-$1,500", "$1,500+"],
+  "Web Development": [
+    "Starter project - $1,800 / EC$4,860",
+    "Standard project - $4,500 / EC$12,150",
+    "Premium project - $9,500+ / EC$25,650+",
+    "Basic maintenance - $150/mo / EC$405",
+    "Standard maintenance - $350/mo / EC$945",
+    "Premium maintenance - $650/mo / EC$1,755",
+  ],
+  "App Development": [
+    "Starter MVP - $3,500 / EC$9,450",
+    "Standard app - $8,000 / EC$21,600",
+    "Premium app - $18,000+ / EC$48,600+",
+    "Basic app support - $300/mo / EC$810",
+    "Standard app support - $600/mo / EC$1,620",
+    "Premium app support - $1,100/mo / EC$2,970",
+  ],
+  "Game Development": [
+    "Prototype - $3,000 / EC$8,100",
+    "Demo build - $8,500 / EC$22,950",
+    "Full scope - $20,000+ / EC$54,000+",
+    "Sprint retainer - $1,200/mo / EC$3,240",
+    "Studio retainer - $2,500/mo / EC$6,750",
+    "Full production - $4,500/mo / EC$12,150",
+  ],
+  "Software Support": [
+    "Essential support - $200/mo / EC$540",
+    "Business support - $450/mo / EC$1,215",
+    "Enterprise support - $900/mo / EC$2,430",
+  ],
+  "Technical Consulting": [
+    "Session - $175/hr / EC$472.50",
+    "Audit - $950 / EC$2,565",
+    "Strategy Sprint - $2,500 / EC$6,750",
+    "Starter advisory - $400/mo / EC$1,080",
+    "Growth advisory - $900/mo / EC$2,430",
+    "Partner advisory - $1,800/mo / EC$4,860",
+  ],
 };
 
 const budgetGuidanceByService: Record<(typeof serviceOptions)[number], string> = {
-  "Web Development": "Covers landing page refreshes up to multi-page business websites.",
-  "App Development": "Fits MVP modules, internal features, and custom dashboard work.",
-  "Game Development": "Fits smaller Unreal game development and interactive build scopes.",
-  "Software Support": "Monthly support pricing is shown as a retainer range.",
-  "Technical Consulting": "Best for discovery, architecture planning, and scoped technical guidance.",
+  "Web Development":
+    "Fixed-price web projects start at $1,800, with optional monthly maintenance retainers from $150/mo.",
+  "App Development":
+    "App projects range from focused MVPs to full product builds, with support retainers available after launch.",
+  "Game Development":
+    "Unity game work covers prototypes, demo builds, and larger production scopes, plus monthly sprint retainers.",
+  "Software Support":
+    "Software Support is retainer-only and designed for existing systems that need fixes, monitoring, and priority response.",
+  "Technical Consulting":
+    "Choose ad hoc consulting, a fixed audit or strategy sprint, or an ongoing advisory retainer.",
 };
 
 const timelineOptionsByService: Record<(typeof serviceOptions)[number], string[]> = {
-  "Web Development": ["Within 1 month", "1-2 months", "2-3 months"],
-  "App Development": ["1-2 months", "2-3 months", "3-6 months"],
-  "Game Development": ["3-6 months", "6-12 months", "1-2 years"],
-  "Software Support": ["This month", "1-2 months", "Ongoing support"],
-  "Technical Consulting": ["Within 1 month", "1-2 months", "2-3 months"],
+  "Web Development": ["Within 1 month", "1-2 months", "2-4 months", "Post-launch support only"],
+  "App Development": ["Within 1 month", "2-3 months", "3-6 months", "Ongoing support only"],
+  "Game Development": ["1-2 months", "3-6 months", "6-12 months", "Ongoing production support"],
+  "Software Support": ["This month", "Next month", "Quarterly support plan", "Ongoing support"],
+  "Technical Consulting": ["This week", "Within 1 month", "1-2 months", "Ongoing advisory"],
 };
 
 export function ContactForm() {
@@ -256,6 +293,10 @@ export function ContactForm() {
               (selectedService as (typeof serviceOptions)[number]) ?? "Web Development"
             ]
           }
+        </p>
+        <p className="text-xs leading-6 text-slate-500">
+          Fixed projects start with a 50% deposit. Retainers are billed monthly in advance. Change
+          requests outside the agreed scope are quoted separately at $175/hr.
         </p>
         <div className="grid gap-5 md:max-w-sm">
           <Field label="Preferred start date">

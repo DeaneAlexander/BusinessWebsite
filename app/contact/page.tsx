@@ -8,14 +8,15 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Request a proposal, share your goals, or book a strategy call for a conversion-focused Next.js website project.",
+    "Request a fixed-price proposal or a monthly retainer for web, app, Unity, support, and consulting work.",
 };
 
 const prepList = [
   "Current website URL and core services",
   "Target locations or audience segments",
-  "Monthly lead volume or traffic goals",
-  "Project timeline, preferred start date, budget, and launch constraints",
+  "What you need: fixed project, monthly support, or both",
+  "Preferred package (Starter, Standard, Premium) and any must-have requirements",
+  "Project timeline, preferred start date, and launch constraints",
 ];
 
 export default function ContactPage() {
@@ -25,12 +26,26 @@ export default function ContactPage() {
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Contact</p>
           <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            Tell us what you need and we&rsquo;ll map the fastest path to a better-performing site.
+            Tell us what you need and we&rsquo;ll map the fastest path to a scoped proposal.
           </h1>
           <p className="text-lg leading-8 text-slate-600">
-            The form captures the lead details a CRM or sales process actually needs, so we can
-            respond with a scoped recommendation instead of generic follow-up.
+            We quote project work as fixed-price packages and offer monthly retainers for support
+            and advisory. Share the basics and we&rsquo;ll respond with a clear scope and next steps.
           </p>
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8">
+            <p className="text-lg font-semibold text-slate-950">Pricing model (quick summary)</p>
+            <ul className="mt-5 grid gap-3 text-sm text-slate-600">
+              <li className="rounded-2xl bg-slate-50 px-4 py-3">
+                Fixed projects: 50% deposit to start, balance due on delivery.
+              </li>
+              <li className="rounded-2xl bg-slate-50 px-4 py-3">
+                Retainers: billed monthly in advance for support, maintenance, or advisory.
+              </li>
+              <li className="rounded-2xl bg-slate-50 px-4 py-3">
+                Pricing is in USD; EC$ equivalent is estimated at a 2.70 rate.
+              </li>
+            </ul>
+          </div>
           <div className="rounded-[2rem] bg-slate-950 p-8 text-white">
             <p className="text-lg font-semibold">Prefer to book first?</p>
             <p className="mt-3 text-sm leading-7 text-slate-300">
