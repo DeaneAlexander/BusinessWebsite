@@ -84,7 +84,7 @@ const budgetGuidanceByService: Record<(typeof serviceOptions)[number], string> =
   "App Development":
     "App projects range from focused MVPs to full product builds, with support retainers available after launch.",
   "Game Development":
-    "Unity game work covers prototypes, demo builds, and larger production scopes, plus monthly sprint retainers.",
+    "Unreal Engine game work covers prototypes, demo builds, and larger production scopes, plus monthly sprint retainers.",
   "Software Support":
     "Software Support is retainer-only and designed for existing systems that need fixes, monitoring, and priority response.",
   "Technical Consulting":

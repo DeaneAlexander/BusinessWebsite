@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "ALX Digital Incorporated",
   domain: "https://www.northstargrowthstudio.com",
   description:
-    "Web development, app development, Unity game development, software support, and technical consulting for businesses that need practical digital solutions.",
+    "Web development, app development, Unreal Engine game development, software support, and technical consulting for businesses that need practical digital solutions.",
   bookingPagePath: "/book-call",
   bookingUrl: "https://calendly.com/deaneaustenalexander/strategy-call",
   whatsappUrl:
@@ -39,7 +39,7 @@ export const services = [
   {
     name: "Game Development",
     summary:
-      "Unity game development, gameplay systems, interactive experiences",
+      "Unreal Engine game development, gameplay systems, interactive experiences",
   },
   {
     name: "Software Support",

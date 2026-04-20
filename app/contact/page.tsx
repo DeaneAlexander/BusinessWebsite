@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Request a fixed-price proposal or a monthly retainer for web, app, Unity, support, and consulting work.",
+    "Request a fixed-price proposal or a monthly retainer for web, app, Unreal Engine, support, and consulting work.",
 };
 
 const prepList = [

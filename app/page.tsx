@@ -29,7 +29,7 @@ const sectorFocus = [
   {
     name: "Internal Product Teams",
     description:
-      "App builds, Unity-based interactive work, and technical consulting for teams that need scoped execution without unnecessary overhead.",
+      "App builds, Unreal Engine interactive work, and technical consulting for teams that need scoped execution without unnecessary overhead.",
   },
 ] as const;
 
@@ -44,7 +44,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-6">
               <h1 className="max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl">
-                Websites, apps, Unity builds, and support systems your team can actually use.
+                Websites, apps, Unreal Engine builds, and support systems your team can actually use.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
                 {siteConfig.name} helps businesses in Antigua and Barbuda and across the Caribbean
@@ -165,7 +165,7 @@ export default function HomePage() {
               service suite.
             </h2>
             <p className="text-sm leading-7 text-slate-600">
-              Web development, app development, Unity-based game work, software support, and
+              Web development, app development, Unreal Engine game work, software support, and
               technical consulting are all visible here so cautious teams can enter at the level
               that fits their current need.
             </p>
