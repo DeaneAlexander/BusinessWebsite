@@ -35,11 +35,11 @@ type PricingGroup = {
 const pricing: PricingGroup[] = [
   {
     service: "Web Development",
-    fixedLabel: "Fixed project (brochure to full platform)",
+    fixedLabel: "Fixed project (startup MVP to growth-ready site)",
     fixed: [
-      { tier: "Starter", price: "$1,800", ec: "EC$4,860", details: "5-page site, contact form, mobile responsive" },
-      { tier: "Standard", badge: "★", price: "$4,500", ec: "EC$12,150", details: "CMS, booking/enquiry flow, SEO setup, 2 revisions" },
-      { tier: "Premium", price: "$9,500+", ec: "EC$25,650+", details: "Full platform: guest portal, payment integration, dashboard" },
+      { tier: "Starter", price: "$800-$1,500", ec: "EC$2,160-EC$4,050", details: "1-3 page MVP site, lead capture, mobile responsive, launch-ready in 7 days" },
+      { tier: "Standard", badge: "★", price: "$2,500-$5,000", ec: "EC$6,750-EC$13,500", details: "8-12 page growth site, basic SEO, CMS, blog or updates section, 2 revisions" },
+      { tier: "Premium", price: "$7,000+", ec: "EC$18,900+", details: "Custom product-facing build with advanced UX, integrations, auth or dashboard planning" },
     ],
     retainerLabel: "Maintenance retainer (post-launch support)",
     retainer: [

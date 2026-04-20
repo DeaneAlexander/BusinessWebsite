@@ -40,9 +40,9 @@ const serviceOptions = [
 
 const budgetOptionsByService: Record<(typeof serviceOptions)[number], string[]> = {
   "Web Development": [
-    "Starter project - $1,800 / EC$4,860",
-    "Standard project - $4,500 / EC$12,150",
-    "Premium project - $9,500+ / EC$25,650+",
+    "Starter project - $800-$1,500 / EC$2,160-EC$4,050",
+    "Standard project - $2,500-$5,000 / EC$6,750-EC$13,500",
+    "Premium project - $7,000+ / EC$18,900+",
     "Basic maintenance - $150/mo / EC$405",
     "Standard maintenance - $350/mo / EC$945",
     "Premium maintenance - $650/mo / EC$1,755",
@@ -80,7 +80,7 @@ const budgetOptionsByService: Record<(typeof serviceOptions)[number], string[]> 
 
 const budgetGuidanceByService: Record<(typeof serviceOptions)[number], string> = {
   "Web Development":
-    "Fixed-price web projects start at $1,800, with optional monthly maintenance retainers from $150/mo.",
+    "Startup web packages now start at $800 for MVP landing pages, with growth builds from $2,500 and product-facing custom work from $7,000+.",
   "App Development":
     "App projects range from focused MVPs to full product builds, with support retainers available after launch.",
   "Game Development":
@@ -92,7 +92,7 @@ const budgetGuidanceByService: Record<(typeof serviceOptions)[number], string> =
 };
 
 const timelineOptionsByService: Record<(typeof serviceOptions)[number], string[]> = {
-  "Web Development": ["Within 1 month", "1-2 months", "2-4 months", "Post-launch support only"],
+  "Web Development": ["Within 7 days", "2-4 weeks", "1-2 months", "Post-launch support only"],
   "App Development": ["Within 1 month", "2-3 months", "3-6 months", "Ongoing support only"],
   "Game Development": ["1-2 months", "3-6 months", "6-12 months", "Ongoing production support"],
   "Software Support": ["This month", "Next month", "Quarterly support plan", "Ongoing support"],
