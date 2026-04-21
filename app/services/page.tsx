@@ -208,7 +208,19 @@ export default function ServicesPage() {
                     </p>
                     <div className="mt-4 grid gap-4 lg:grid-cols-3">
                       {group.fixed.map((item) => (
-                        <article key={`${group.service}-fixed-${item.tier}`} className="rounded-2xl bg-white p-5 shadow-sm">
+                        <article
+                          key={`${group.service}-fixed-${item.tier}`}
+                          className={`rounded-2xl p-5 shadow-sm transition ${
+                            group.service === "Web Development" && item.tier === "Standard"
+                              ? "border-2 border-cyan-400 bg-cyan-50 shadow-cyan-100"
+                              : "bg-white"
+                          }`}
+                        >
+                          {group.service === "Web Development" && item.tier === "Standard" ? (
+                            <span className="mb-3 inline-flex rounded-full bg-cyan-500 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-950">
+                              Most Popular
+                            </span>
+                          ) : null}
                           <div className="flex items-start justify-between gap-3">
                             <p className="text-lg font-semibold text-slate-950">
                               {item.tier} {item.badge ? <span className="text-cyan-700">{item.badge}</span> : null}

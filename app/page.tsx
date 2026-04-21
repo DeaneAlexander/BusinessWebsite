@@ -44,7 +44,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-6">
               <h1 className="max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl">
-                Websites, apps, Unreal Engine builds, and support systems your team can actually use.
+                Websites, Apps, Unreal Engine builds, and support systems your team can actually use.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
                 {siteConfig.name} helps businesses in Antigua and Barbuda and across the Caribbean
