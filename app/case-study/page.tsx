@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function CaseStudyPage() {
   return (
-    <div className="container-shell py-20">
-      <section className="rounded-[2rem] bg-white p-8 shadow-sm sm:p-10">
+    <div className="container-shell py-16 sm:py-20">
+      <section className="rounded-[2rem] bg-white p-6 shadow-sm sm:p-10">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Case Study</p>
-        <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
           How {caseStudy.client} aligned its website and booking flow to fit an Antigua-sized market.
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+        <p className="mt-6 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
           Industry: {caseStudy.industry}. In Antigua, business is built on reputation, referrals,
           and making it easy for the right people to take action, so this engagement focused on
           clearer positioning, smoother booking, and a digital presence that felt credible from the
@@ -54,7 +54,7 @@ export default function CaseStudyPage() {
         </article>
       </section>
 
-      <section className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
+      <section className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
         <div className="max-w-5xl space-y-5">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
             Informational Context
@@ -68,7 +68,7 @@ export default function CaseStudyPage() {
 
         <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-slate-800 bg-slate-950 shadow-xl shadow-slate-950/15">
           <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse text-left">
+            <table className="min-w-[720px] border-collapse text-left">
               <thead className="bg-slate-900 text-white">
                 <tr>
                   <th className="border-b border-white/10 px-5 py-4 text-sm font-semibold text-cyan-300">KPI</th>
@@ -111,7 +111,7 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
-      <section className="mt-12 rounded-[2rem] bg-cyan-400 px-8 py-10 text-slate-950">
+      <section className="mt-12 rounded-[2rem] bg-cyan-400 px-5 py-8 text-slate-950 sm:px-8 sm:py-10">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700">Your next win</p>

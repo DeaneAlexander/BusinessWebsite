@@ -37,16 +37,16 @@ export default function HomePage() {
   return (
     <div>
       <section className="hero-grid overflow-hidden bg-slate-950 text-white">
-        <div className="container-shell grid gap-14 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
+        <div className="container-shell grid gap-12 py-18 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-28">
           <div className="space-y-8">
-            <div className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
+            <div className="inline-flex max-w-full flex-wrap rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
               Digital products and support systems for Antigua and the wider Caribbean
             </div>
             <div className="space-y-6">
-              <h1 className="max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
                 Websites, Apps, Unreal Engine builds, and support systems your team can actually use.
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
                 {siteConfig.name} helps businesses in Antigua and Barbuda and across the Caribbean
                 plan, build, and support digital products that improve customer journeys, daily
                 operations, and long-term growth.
@@ -95,7 +95,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="section-card rounded-[2rem] p-8 text-slate-950 shadow-2xl shadow-cyan-950/20">
+          <div className="section-card rounded-[2rem] p-6 text-slate-950 shadow-2xl shadow-cyan-950/20 sm:p-8">
             <div className="space-y-8">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
@@ -127,7 +127,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-shell py-20">
+      <section className="container-shell py-16 sm:py-20">
         <div className="space-y-6">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
@@ -154,7 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-shell py-20">
+      <section className="container-shell py-16 sm:py-20">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
@@ -182,7 +182,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-slate-100 py-20">
+      <section className="bg-slate-100 py-16 sm:py-20">
         <div className="container-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
@@ -216,7 +216,7 @@ export default function HomePage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
                   {row.metric}
                 </p>
-                <p className="mt-3 inline-flex rounded-full bg-cyan-100 px-3 py-1 text-2xl font-semibold text-cyan-800">
+                <p className="mt-3 inline-flex max-w-full rounded-full bg-cyan-100 px-3 py-1 text-xl font-semibold text-cyan-800 sm:text-2xl">
                   {row.target}
                 </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{row.rationale}</p>
@@ -227,7 +227,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="container-shell space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
@@ -262,7 +262,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-shell py-20">
+      <section className="container-shell py-16 sm:py-20">
         <div className="grid gap-6 lg:grid-cols-2">
           {testimonials.map((testimonial) => (
             <blockquote key={testimonial.author} className="rounded-[2rem] bg-slate-950 p-8 text-white">
@@ -277,7 +277,7 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell pb-8">
-        <div className="rounded-[2rem] bg-cyan-400 px-8 py-10 text-slate-950">
+        <div className="rounded-[2rem] bg-cyan-400 px-5 py-8 text-slate-950 sm:px-8 sm:py-10">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-700">Next step</p>

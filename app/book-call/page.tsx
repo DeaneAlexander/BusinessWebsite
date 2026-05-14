@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 
 export default function BookCallPage() {
   return (
-    <div className="container-shell py-20">
-      <section className="mb-10 rounded-[2rem] bg-slate-950 px-8 py-10 text-white">
+    <div className="container-shell py-16 sm:py-20">
+      <section className="mb-10 rounded-[2rem] bg-slate-950 px-5 py-8 text-white sm:px-8 sm:py-10">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
           Book a Call
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+        <h1 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
           Reserve a strategy call and let&rsquo;s map the next best move for your business.
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+        <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
           Use the scheduler below to book time with ALX Digital. If you prefer, you can also reach
           out on WhatsApp before booking.
         </p>

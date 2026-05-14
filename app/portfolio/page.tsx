@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <div className="container-shell py-20">
+    <div className="container-shell py-16 sm:py-20">
       <section className="space-y-6">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Portfolio</p>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+        <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
           Recent launches built to improve lead quality, trust, and booking intent.
         </h1>
-        <p className="max-w-2xl text-lg leading-8 text-slate-600">
+        <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
           Each engagement balances strategic messaging, conversion design, and practical CRM
           alignment so the site performs after launch.
         </p>
@@ -27,7 +27,7 @@ export default function PortfolioPage() {
         {portfolioItems.map((item, index) => (
           <article
             key={item.name}
-            className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-[0.75fr_1.25fr]"
+            className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.75fr_1.25fr]"
           >
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
@@ -48,7 +48,7 @@ export default function PortfolioPage() {
         ))}
       </section>
 
-      <section className="mt-12 rounded-[2rem] bg-slate-950 px-8 py-10 text-white">
+      <section className="mt-12 rounded-[2rem] bg-slate-950 px-5 py-8 text-white sm:px-8 sm:py-10">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Want similar results?</p>

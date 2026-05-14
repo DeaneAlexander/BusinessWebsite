@@ -7,10 +7,10 @@ import { navigation, siteConfig } from "@/lib/site";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl items-center px-6 py-4 lg:px-8">
+      <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="relative block h-14 w-[170px] overflow-hidden"
+          className="relative block h-12 w-[132px] shrink-0 overflow-hidden sm:h-14 sm:w-[170px]"
           aria-label={siteConfig.name}
         >
           <Image
@@ -34,7 +34,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-4 lg:pl-4">
+        <div className="ml-auto flex items-center gap-2 sm:gap-4 lg:pl-4">
           <TrackedLink
             eventName="contact_cta_click"
             eventParams={{ cta_location: "header", cta_type: "contact" }}
@@ -47,11 +47,26 @@ export function SiteHeader() {
             eventName="booking_cta_click"
             eventParams={{ cta_location: "header", cta_type: "booking" }}
             href={siteConfig.bookingPagePath}
-            className="inline-flex rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+            className="inline-flex rounded-full bg-cyan-400 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 sm:px-4"
           >
-            Book with ALX Digital
+            <span className="sm:hidden">Book Call</span>
+            <span className="hidden sm:inline">Book with ALX Digital</span>
           </TrackedLink>
         </div>
+      </div>
+
+      <div className="border-t border-white/10 md:hidden">
+        <nav className="mx-auto flex w-full max-w-7xl gap-4 overflow-x-auto px-4 py-3 text-sm whitespace-nowrap text-slate-300 sm:px-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-white"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

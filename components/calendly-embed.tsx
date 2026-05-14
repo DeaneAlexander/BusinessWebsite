@@ -9,11 +9,11 @@ function getCalendlyEmbedUrl(url: string) {
 export function CalendlyEmbed() {
   return (
     <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-      <div className="border-b border-slate-200 px-6 py-5">
+      <div className="border-b border-slate-200 px-5 py-5 sm:px-6">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
           Strategy Call
         </p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
           Book a Strategy Call with ALX Digital
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
@@ -31,7 +31,7 @@ export function CalendlyEmbed() {
         </div>
       </div>
 
-      <div className="border-t border-slate-200 px-6 py-4">
+      <div className="border-t border-slate-200 px-5 py-4 sm:px-6">
         <p className="text-sm leading-7 text-slate-600">
           If you still see an unavailable calendar, it usually means the event is unpublished or no
           availability is set inside Calendly.

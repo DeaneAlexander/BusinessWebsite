@@ -21,18 +21,18 @@ const prepList = [
 
 export default function ContactPage() {
   return (
-    <div className="container-shell py-20">
+    <div className="container-shell py-16 sm:py-20">
       <section className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Contact</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
             Tell us what you need and we&rsquo;ll map the fastest path to a scoped proposal.
           </h1>
-          <p className="text-lg leading-8 text-slate-600">
+          <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             We quote project work as fixed-price packages and offer monthly retainers for support
             and advisory. Share the basics and we&rsquo;ll respond with a clear scope and next steps.
           </p>
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8">
             <p className="text-lg font-semibold text-slate-950">Pricing model (quick summary)</p>
             <ul className="mt-5 grid gap-3 text-sm text-slate-600">
               <li className="rounded-2xl bg-slate-50 px-4 py-3">
@@ -46,7 +46,7 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-          <div className="rounded-[2rem] bg-slate-950 p-8 text-white">
+          <div className="rounded-[2rem] bg-slate-950 p-6 text-white sm:p-8">
             <p className="text-lg font-semibold">Prefer to book first?</p>
             <p className="mt-3 text-sm leading-7 text-slate-300">
               Use the embedded scheduler below or open the full booking page if you want a dedicated
@@ -73,7 +73,7 @@ export default function ContactPage() {
               </TrackedExternalLink>
             </div>
           </div>
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-8">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8">
             <p className="text-lg font-semibold text-slate-950">Helpful details to include</p>
             <ul className="mt-5 grid gap-3">
               {prepList.map((item) => (

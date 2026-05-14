@@ -202,7 +202,7 @@ export function ContactForm() {
   });
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/60">
+    <form onSubmit={onSubmit} className="grid gap-5 rounded-3xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-200/60 sm:p-6">
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="First name" error={errors.firstName?.message}>
           <input
@@ -260,7 +260,7 @@ export function ContactForm() {
       <div className="grid gap-3">
         <div className="grid gap-5 md:grid-cols-[1.35fr_1fr_1fr]">
           <Field label="Service interest">
-            <select {...register("service")} className={`${inputClasses} truncate`}>
+            <select {...register("service")} className={inputClasses}>
               {serviceOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -269,7 +269,7 @@ export function ContactForm() {
             </select>
           </Field>
           <Field label="Budget range">
-            <select {...register("budget")} className={`${inputClasses} truncate`}>
+            <select {...register("budget")} className={inputClasses}>
               {budgetOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -278,7 +278,7 @@ export function ContactForm() {
             </select>
           </Field>
           <Field label="Project timeline">
-            <select {...register("timeline")} className={`${inputClasses} truncate`}>
+            <select {...register("timeline")} className={inputClasses}>
               {timelineOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}

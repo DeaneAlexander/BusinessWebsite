@@ -108,14 +108,14 @@ const pricing: PricingGroup[] = [
 
 export default function ServicesPage() {
   return (
-    <div className="container-shell py-20">
-      <section className="grid gap-10 rounded-[2rem] bg-slate-950 px-8 py-12 text-white lg:grid-cols-[1fr_0.9fr]">
+    <div className="container-shell py-16 sm:py-20">
+      <section className="grid gap-10 rounded-[2rem] bg-slate-950 px-5 py-8 text-white sm:px-8 sm:py-12 lg:grid-cols-[1fr_0.9fr]">
         <div className="space-y-6">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Services</p>
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             Web, app, Unreal Engine, support, and consulting services built around real business needs.
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
             ALX Digital helps businesses in Antigua and Barbuda and across the Caribbean plan,
             build, refine, and support digital products ranging from websites and portals to
             internal tools, Unreal Engine projects, and technical delivery plans.
@@ -144,7 +144,7 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 sm:p-8">
           <p className="text-lg font-semibold">Typical delivery workflow</p>
           <div className="mt-6 grid gap-4">
             {deliverySteps.map((step, index) => (
@@ -157,10 +157,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="grid gap-6 lg:grid-cols-2">
           {services.map((service) => (
-            <article key={service.name} className="section-card rounded-[2rem] p-8">
+            <article key={service.name} className="section-card rounded-[2rem] p-6 sm:p-8">
               <p className="text-2xl font-semibold text-slate-950">{service.name}</p>
               <p className="mt-4 text-sm leading-8 text-slate-600">{service.summary}</p>
               <p className="mt-5 text-sm leading-7 text-slate-500">
@@ -173,7 +173,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="pb-4">
-        <div className="rounded-[2rem] border border-slate-200 bg-white p-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-5 sm:p-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-3">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Pricing</p>
@@ -198,7 +198,7 @@ export default function ServicesPage() {
 
           <div className="mt-10 grid gap-8">
             {pricing.map((group) => (
-              <div key={group.service} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6">
+              <div key={group.service} className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5 sm:p-6">
                 <h3 className="text-2xl font-semibold text-slate-950">{group.service}</h3>
 
                 {group.fixed.length ? (
@@ -221,11 +221,11 @@ export default function ServicesPage() {
                               Most Popular
                             </span>
                           ) : null}
-                          <div className="flex items-start justify-between gap-3">
+                          <div className="flex flex-col items-start gap-3 sm:flex-row sm:justify-between">
                             <p className="text-lg font-semibold text-slate-950">
                               {item.tier} {item.badge ? <span className="text-cyan-700">{item.badge}</span> : null}
                             </p>
-                            <p className="text-right text-sm font-semibold text-slate-950">
+                            <p className="text-sm font-semibold text-slate-950 sm:text-right">
                               {item.price}
                               <span className="block text-xs font-medium text-slate-500">{item.ec}</span>
                             </p>
@@ -244,11 +244,11 @@ export default function ServicesPage() {
                   <div className="mt-4 grid gap-4 lg:grid-cols-3">
                     {group.retainer.map((item) => (
                       <article key={`${group.service}-retainer-${item.tier}`} className="rounded-2xl bg-white p-5 shadow-sm">
-                        <div className="flex items-start justify-between gap-3">
+                        <div className="flex flex-col items-start gap-3 sm:flex-row sm:justify-between">
                           <p className="text-lg font-semibold text-slate-950">
                             {item.tier} {item.badge ? <span className="text-cyan-700">{item.badge}</span> : null}
                           </p>
-                          <p className="text-right text-sm font-semibold text-slate-950">
+                          <p className="text-sm font-semibold text-slate-950 sm:text-right">
                             {item.price}
                             <span className="block text-xs font-medium text-slate-500">{item.ec}</span>
                           </p>

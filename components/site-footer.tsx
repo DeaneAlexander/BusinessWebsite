@@ -7,11 +7,11 @@ import { navigation, siteConfig } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
         <div className="space-y-4">
           <Link
             href="/"
-            className="relative block h-28 w-[260px]"
+            className="relative block h-24 w-full max-w-[220px] sm:h-28 sm:max-w-[260px]"
             aria-label={siteConfig.name}
           >
             <Image
@@ -45,7 +45,7 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="text-sm font-semibold text-slate-900">Contact</p>
           <div className="flex flex-col gap-2 text-sm text-slate-600">
-            <a href={`mailto:${siteConfig.email}`} className="transition hover:text-slate-950">
+            <a href={`mailto:${siteConfig.email}`} className="break-all transition hover:text-slate-950">
               {siteConfig.email}
             </a>
             <a href={`tel:${siteConfig.phone}`} className="transition hover:text-slate-950">
