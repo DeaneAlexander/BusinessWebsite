@@ -4,9 +4,20 @@ import { TrackedLink } from "@/components/tracking/tracked-link";
 import { caseStudy, marketContext, marketKpis } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Case Study",
+  title: "Caribbean Digital Case Study",
   description:
     "See how ALX Digital framed website and booking strategy around Antigua's market realities, trust signals, and qualified outreach goals.",
+  openGraph: {
+    title: "Caribbean Digital Case Study | ALX Digital Incorporated",
+    description:
+      "See how ALX Digital framed website and booking strategy around Antigua's market realities, trust signals, and qualified outreach goals.",
+    url: "https://www.alxdigiinc.com/case-study",
+  },
+  twitter: {
+    title: "Caribbean Digital Case Study | ALX Digital Incorporated",
+    description:
+      "See how ALX Digital framed website and booking strategy around Antigua's market realities, trust signals, and qualified outreach goals.",
+  },
 };
 
 export default function CaseStudyPage() {

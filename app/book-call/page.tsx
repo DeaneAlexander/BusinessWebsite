@@ -5,9 +5,20 @@ import { TrackedExternalLink } from "@/components/tracking/tracked-external-link
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a Call",
+  title: "Book a Strategy Call",
   description:
     "Book a strategy call with ALX Digital Incorporated to discuss your website, app, or consulting project.",
+  openGraph: {
+    title: "Book a Strategy Call | ALX Digital Incorporated",
+    description:
+      "Book a strategy call with ALX Digital Incorporated to discuss your website, app, or consulting project.",
+    url: "https://www.alxdigiinc.com/book-call",
+  },
+  twitter: {
+    title: "Book a Strategy Call | ALX Digital Incorporated",
+    description:
+      "Book a strategy call with ALX Digital Incorporated to discuss your website, app, or consulting project.",
+  },
 };
 
 export default function BookCallPage() {

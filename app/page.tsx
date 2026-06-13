@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { TrackedExternalLink } from "@/components/tracking/tracked-external-link";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import {
@@ -9,6 +11,23 @@ import {
   siteConfig,
   testimonials,
 } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Software Development Studio",
+  description:
+    "ALX Digital Incorporated builds websites, Apps, Unreal Engine experiences, and support systems for businesses in Antigua and Barbuda and across the Caribbean.",
+  openGraph: {
+    title: "ALX Digital Incorporated | Software Development Studio",
+    description:
+      "ALX Digital Incorporated builds websites, Apps, Unreal Engine experiences, and support systems for businesses in Antigua and Barbuda and across the Caribbean.",
+    url: "https://www.alxdigiinc.com",
+  },
+  twitter: {
+    title: "ALX Digital Incorporated | Software Development Studio",
+    description:
+      "ALX Digital Incorporated builds websites, Apps, Unreal Engine experiences, and support systems for businesses in Antigua and Barbuda and across the Caribbean.",
+  },
+};
 
 const sectorFocus = [
   {

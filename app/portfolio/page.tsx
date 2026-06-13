@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Review recent conversion-focused website and lead generation work for service businesses across home services, legal, and healthcare.",
+  openGraph: {
+    title: "Portfolio | ALX Digital Incorporated",
+    description:
+      "Review recent conversion-focused website and lead generation work for service businesses across home services, legal, and healthcare.",
+    url: "https://www.alxdigiinc.com/portfolio",
+  },
+  twitter: {
+    title: "Portfolio | ALX Digital Incorporated",
+    description:
+      "Review recent conversion-focused website and lead generation work for service businesses across home services, legal, and healthcare.",
+  },
 };
 
 export default function PortfolioPage() {
