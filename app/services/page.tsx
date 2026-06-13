@@ -4,9 +4,20 @@ import { TrackedLink } from "@/components/tracking/tracked-link";
 import { services, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services & Pricing",
   description:
     "Explore web development, app development, Unreal Engine game development, software support, and technical consulting services.",
+  openGraph: {
+    title: "Services & Pricing | ALX Digital Incorporated",
+    description:
+      "Explore web development, app development, Unreal Engine game development, software support, and technical consulting services.",
+    url: "https://www.alxdigiinc.com/services",
+  },
+  twitter: {
+    title: "Services & Pricing | ALX Digital Incorporated",
+    description:
+      "Explore web development, app development, Unreal Engine game development, software support, and technical consulting services.",
+  },
 };
 
 const deliverySteps = [
@@ -163,10 +174,7 @@ export default function ServicesPage() {
             <article key={service.name} className="section-card rounded-[2rem] p-6 sm:p-8">
               <p className="text-2xl font-semibold text-slate-950">{service.name}</p>
               <p className="mt-4 text-sm leading-8 text-slate-600">{service.summary}</p>
-              <p className="mt-5 text-sm leading-7 text-slate-500">
-                Designed for teams that need practical execution, clear technical thinking, and a
-                partner who can move from planning into delivery without unnecessary overhead.
-              </p>
+              <p className="mt-5 text-sm leading-7 text-slate-500">{service.detail}</p>
             </article>
           ))}
         </div>

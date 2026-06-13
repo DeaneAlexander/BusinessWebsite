@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "ALX Digital Incorporated",
-  domain: "https://www.northstargrowthstudio.com",
+  domain: "https://www.alxdigiinc.com",
   description:
     "Web development, App development, Unreal Engine game development, software support, and technical consulting for businesses that need practical digital solutions.",
   bookingPagePath: "/book-call",
@@ -30,26 +30,36 @@ export const services = [
     name: "Web Development",
     summary:
       "Business websites, booking flows, portals",
+    detail:
+      "Web projects focus on fast, credible digital experiences for Caribbean businesses that need clearer service pages, stronger enquiry flow, and mobile-first performance. This includes startup landing pages, booking journeys, CMS-backed sites, and larger platform-style builds.",
   },
   {
     name: "App Development",
     summary:
       "Lightweight MVPs, internal tools, dashboards",
+    detail:
+      "App development covers MVPs, client portals, and internal tools that solve real workflow problems instead of creating extra admin. Typical builds include authentication, dashboards, database-backed features, and phased delivery for startups or operating teams.",
   },
   {
     name: "Game Development",
     summary:
       "Unreal Engine game development, gameplay systems, interactive experiences",
+    detail:
+      "Unreal Engine work spans prototypes, playable demo builds, gameplay systems, and interactive experiences for indie studios, simulations, and tourism-facing concepts. Engagements can cover core mechanics, UI, technical planning, and production support sprints.",
   },
   {
     name: "Software Support",
     summary:
       "Bug fixes, optimization, feature enhancements",
+    detail:
+      "Software Support is for teams that already have a product live and need reliable help maintaining momentum. That includes bug fixing, performance issues, update support, small feature rollouts, and response targets that fit active business systems.",
   },
   {
     name: "Technical Consulting",
     summary:
       "Scope definition, architecture, delivery planning",
+    detail:
+      "Technical Consulting helps founders and operators make better delivery decisions before they overspend or build the wrong thing. Services include audits, roadmap planning, architecture reviews, vendor guidance, and fractional technical leadership for growing teams.",
   },
 ] as const;
 

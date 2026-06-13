@@ -23,19 +23,19 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: `${siteConfig.name} | Conversion-Focused Web Design`,
+    default: `${siteConfig.name} | Software Development Studio`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js agency website",
-    "conversion focused web design",
-    "service business website",
-    "CRM-ready contact form",
-    "lead generation website",
+    "software development studio Antigua",
+    "Caribbean web development",
+    "app development Antigua and Barbuda",
+    "Unreal Engine development",
+    "technical consulting Caribbean",
   ],
   openGraph: {
-    title: `${siteConfig.name} | Conversion-Focused Web Design`,
+    title: `${siteConfig.name} | Software Development Studio`,
     description: siteConfig.description,
     url: siteConfig.domain,
     siteName: siteConfig.name,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Conversion-Focused Web Design`,
+    title: `${siteConfig.name} | Software Development Studio`,
     description: siteConfig.description,
   },
 };

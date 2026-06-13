@@ -6,9 +6,20 @@ import { TrackedLink } from "@/components/tracking/tracked-link";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Get a Proposal",
   description:
     "Request a fixed-price proposal or a monthly retainer for web, app, Unreal Engine, support, and consulting work.",
+  openGraph: {
+    title: "Get a Proposal | ALX Digital Incorporated",
+    description:
+      "Request a fixed-price proposal or a monthly retainer for web, app, Unreal Engine, support, and consulting work.",
+    url: "https://www.alxdigiinc.com/contact",
+  },
+  twitter: {
+    title: "Get a Proposal | ALX Digital Incorporated",
+    description:
+      "Request a fixed-price proposal or a monthly retainer for web, app, Unreal Engine, support, and consulting work.",
+  },
 };
 
 const prepList = [

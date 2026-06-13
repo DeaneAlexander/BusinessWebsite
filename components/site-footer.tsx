@@ -22,8 +22,8 @@ export function SiteFooter() {
             />
           </Link>
           <p className="max-w-xl text-sm leading-7 text-slate-600">
-            Conversion-focused websites for service brands that need more pipeline, stronger proof,
-            and cleaner lead handoff into sales.
+            Software development studio based in Antigua and Barbuda, building websites, Apps,
+            Unreal Engine builds, and support systems for Caribbean businesses.
           </p>
         </div>
 
