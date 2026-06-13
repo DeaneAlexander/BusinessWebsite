@@ -65,6 +65,14 @@ export default function HomePage() {
               <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
                 Websites, Apps, Unreal Engine builds, and support systems your team can actually use.
               </h1>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {proofStats.map((stat) => (
+                  <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                    <p className="text-2xl font-semibold text-white">{stat.value}</p>
+                    <p className="mt-2 text-sm text-slate-300">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
               <p className="max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
                 {siteConfig.name} helps businesses in Antigua and Barbuda and across the Caribbean
                 plan, build, and support digital products that improve customer journeys, daily
@@ -103,14 +111,6 @@ export default function HomePage() {
               >
                 WhatsApp Us
               </TrackedExternalLink>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {proofStats.map((stat) => (
-                <div key={stat.label} className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                  <p className="text-2xl font-semibold text-white">{stat.value}</p>
-                  <p className="mt-2 text-sm text-slate-300">{stat.label}</p>
-                </div>
-              ))}
             </div>
           </div>
 

@@ -40,8 +40,9 @@ export default function ContactPage() {
             Tell us what you need and we&rsquo;ll map the fastest path to a scoped proposal.
           </h1>
           <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-            We quote project work as fixed-price packages and offer monthly retainers for support
-            and advisory. Share the basics and we&rsquo;ll respond with a clear scope and next steps.
+            We&rsquo;ve scoped and delivered digital projects for businesses across the Caribbean.
+            Tell us what you&rsquo;re building and we&rsquo;ll respond with a clear scope, realistic
+            timeline, and the next best step for moving it forward.
           </p>
           <div className="rounded-[2rem] border border-slate-200 bg-white p-6 sm:p-8">
             <p className="text-lg font-semibold text-slate-950">Pricing model (quick summary)</p>
