@@ -64,9 +64,9 @@ export const services = [
 ] as const;
 
 export const proofStats = [
-  { label: "Projects and products contributed to", value: "20+" },
-  { label: "Typical build planning window", value: "2-4 wks" },
-  { label: "Support response target", value: "< 48 hrs" },
+  { label: "Projects Contributed To", value: "20+" },
+  { label: "Typical Build Window", value: "2-4 Weeks" },
+  { label: "Support Replies", value: "Within 48 Hours" },
 ] as const;
 
 export const portfolioItems = [
