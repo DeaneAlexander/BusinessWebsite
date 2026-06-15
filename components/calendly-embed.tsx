@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { TrackedExternalLink } from "@/components/tracking/tracked-external-link";
 import { siteConfig } from "@/lib/site";
 
@@ -7,6 +11,8 @@ function getCalendlyEmbedUrl(url: string) {
 }
 
 export function CalendlyEmbed() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 px-5 py-5 sm:px-6">
@@ -22,12 +28,24 @@ export function CalendlyEmbed() {
       </div>
 
       <div className="bg-slate-100/80 p-4 sm:p-6">
-        <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-inner">
+        <div className="relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-inner">
+          {!isLoaded ? (
+            <div className="absolute inset-0 z-10 flex min-h-[760px] items-center justify-center bg-white/90 backdrop-blur-sm">
+              <div className="space-y-3 text-center">
+                <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-cyan-500" />
+                <p className="text-sm font-medium text-slate-700">Loading scheduler...</p>
+                <p className="text-xs text-slate-500">Calendly is preparing the available time slots.</p>
+              </div>
+            </div>
+          ) : null}
           <iframe
             title="Book a strategy call with ALX Digital"
             src={getCalendlyEmbedUrl(siteConfig.bookingUrl)}
-            loading="lazy"
-            className="min-h-[760px] w-full border-0"
+            loading="eager"
+            onLoad={() => setIsLoaded(true)}
+            className={`min-h-[760px] w-full border-0 transition-opacity duration-300 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
           />
         </div>
       </div>
