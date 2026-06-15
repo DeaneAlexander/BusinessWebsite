@@ -24,15 +24,19 @@ export default function CaseStudyPage() {
   return (
     <div className="container-shell py-16 sm:py-20">
       <section className="rounded-[2rem] bg-white p-6 shadow-sm sm:p-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Case Study</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+          Representative Case Study
+        </p>
         <h1 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-          How {caseStudy.client} aligned its website and booking flow to fit an Antigua-sized market.
+          How a representative Caribbean business scenario can align its website and booking flow
+          to fit an Antigua-sized market.
         </h1>
         <p className="mt-6 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-          Industry: {caseStudy.industry}. In Antigua, business is built on reputation, referrals,
-          and making it easy for the right people to take action, so this engagement focused on
-          clearer positioning, smoother booking, and a digital presence that felt credible from the
-          first visit.
+          Industry: {caseStudy.industry}. This example is a representative planning scenario rather
+          than a published client engagement. In Antigua, business is built on reputation,
+          referrals, and making it easy for the right people to take action, so this walkthrough
+          shows how ALX Digital approaches clearer positioning, smoother booking, and a more
+          credible digital experience.
         </p>
       </section>
 

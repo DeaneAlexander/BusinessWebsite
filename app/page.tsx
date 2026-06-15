@@ -9,7 +9,6 @@ import {
   proofStats,
   services,
   siteConfig,
-  testimonials,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -252,9 +251,14 @@ export default function HomePage() {
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Selected work</p>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                Selected work across websites, apps, support systems, and interactive product
-                builds.
+                Representative work scenarios across websites, apps, support systems, and
+                interactive product builds.
               </h2>
+              <p className="max-w-3xl text-sm leading-7 text-slate-600">
+                These examples are representative scenarios that show the kinds of delivery work
+                ALX Digital can scope and build. Named client case studies and published project
+                references will be added as they are approved for release.
+              </p>
             </div>
             <TrackedLink
               eventName="portfolio_cta_click"
@@ -282,16 +286,18 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell py-16 sm:py-20">
-        <div className="grid gap-6 lg:grid-cols-2">
-          {testimonials.map((testimonial) => (
-            <blockquote key={testimonial.author} className="rounded-[2rem] bg-slate-950 p-8 text-white">
-              <p className="text-xl leading-9 text-slate-100">&ldquo;{testimonial.quote}&rdquo;</p>
-              <footer className="mt-6">
-                <p className="font-semibold">{testimonial.author}</p>
-                <p className="text-sm text-slate-300">{testimonial.role}</p>
-              </footer>
-            </blockquote>
-          ))}
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+            Testimonials
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Under Construction
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">
+            Real client testimonials and approved references will be published here once they are
+            available for public use. Until then, ALX Digital is keeping this section intentionally
+            minimal rather than presenting placeholder endorsements.
+          </p>
         </div>
       </section>
 

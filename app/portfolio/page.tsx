@@ -26,11 +26,16 @@ export default function PortfolioPage() {
       <section className="space-y-6">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Portfolio</p>
         <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-          Recent launches built to improve lead quality, trust, and booking intent.
+          Representative work scenarios built to improve lead quality, trust, and booking intent.
         </h1>
         <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
           Each engagement balances strategic messaging, conversion design, and practical CRM
           alignment so the site performs after launch.
+        </p>
+        <p className="max-w-3xl text-sm leading-7 text-slate-500">
+          These samples are representative scenarios, not published client case studies. They show
+          the kinds of websites, apps, and consulting engagements ALX Digital can scope and
+          deliver while approved public references are still being assembled.
         </p>
       </section>
 

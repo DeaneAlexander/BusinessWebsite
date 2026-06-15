@@ -93,21 +93,6 @@ export const portfolioItems = [
   },
 ] as const;
 
-export const testimonials = [
-  {
-    quote:
-      "ALX delivered a clean booking website that finally matched how we actually present the business online.",
-    author: "Marlon James",
-    role: "Director, Harbor Services",
-  },
-  {
-    quote:
-      "The dashboard and support work gave our team a practical system we could use every day, not just a good demo.",
-    author: "Alyssa Reid",
-    role: "Operations Lead, OpsFlow",
-  },
-] as const;
-
 export const caseStudy = {
   client: "Northline Fitness",
   industry: "Membership and Booking Services",
