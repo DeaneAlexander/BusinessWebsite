@@ -133,8 +133,8 @@ export function ContactForm() {
   );
 
   useEffect(() => {
-    setValue("budget", budgetOptions[0], { shouldDirty: true });
-    setValue("timeline", timelineOptions[0], { shouldDirty: true });
+    setValue("budget", budgetOptions[0], { shouldDirty: false });
+    setValue("timeline", timelineOptions[0], { shouldDirty: false });
   }, [budgetOptions, setValue, timelineOptions]);
 
   const onSubmit = handleSubmit(async (values) => {

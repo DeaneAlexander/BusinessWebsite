@@ -26,6 +26,7 @@ export function CalendlyEmbed() {
           <iframe
             title="Book a strategy call with ALX Digital"
             src={getCalendlyEmbedUrl(siteConfig.bookingUrl)}
+            loading="lazy"
             className="min-h-[760px] w-full border-0"
           />
         </div>
