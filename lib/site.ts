@@ -20,7 +20,7 @@ export const siteConfig = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Qualifications" },
   { href: "/case-study", label: "Case Study" },
   { href: "/contact", label: "Contact" },
 ] as const;

@@ -4,17 +4,17 @@ import { TrackedLink } from "@/components/tracking/tracked-link";
 import { founderCredentials } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Credentials",
+  title: "Qualifications",
   description:
     "Review ALX Digital's academic credentials, technical background, and formal qualifications.",
   openGraph: {
-    title: "Credentials | ALX Digital Incorporated",
+    title: "Qualifications | ALX Digital Incorporated",
     description:
       "Review ALX Digital's academic credentials, technical background, and formal qualifications.",
     url: "https://www.alxdigiinc.com/portfolio",
   },
   twitter: {
-    title: "Credentials | ALX Digital Incorporated",
+    title: "Qualifications | ALX Digital Incorporated",
     description:
       "Review ALX Digital's academic credentials, technical background, and formal qualifications.",
   },
@@ -25,7 +25,7 @@ export default function PortfolioPage() {
     <div className="container-shell py-16 sm:py-20">
       <section className="space-y-6">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-          Credentials
+          Qualifications
         </p>
         <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
           Formal academic background and professional qualifications.
@@ -46,7 +46,7 @@ export default function PortfolioPage() {
             Education & Technical Background
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Credentials presented in a straightforward, professional format.
+            Qualifications presented in a straightforward, professional format.
           </h2>
           <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             The following qualifications reflect formal education in computer science and
