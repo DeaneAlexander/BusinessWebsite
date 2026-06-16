@@ -154,7 +154,7 @@ export function ContactForm() {
       from_name: siteConfig.name,
       replyto: values.email,
       botcheck: "",
-      name: `${values.firstName} ${values.lastName}`,
+      name: [values.firstName, values.lastName].filter(Boolean).join(" ").trim(),
       email: values.email,
       phone: values.phone,
       company: values.company,
@@ -203,19 +203,26 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-5 rounded-3xl border border-slate-200 bg-white p-5 shadow-lg shadow-slate-200/60 sm:p-6">
+      <div className="rounded-2xl bg-slate-50 px-4 py-3 text-sm leading-7 text-slate-600">
+        Send the basics first. Only your first name, email, phone, service, and project summary
+        are required.
+      </div>
+
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="First name" error={errors.firstName?.message}>
           <input
             {...register("firstName", { required: "First name is required." })}
+            autoComplete="given-name"
             className={inputClasses}
             placeholder="Jordan"
           />
         </Field>
         <Field label="Last name" error={errors.lastName?.message}>
           <input
-            {...register("lastName", { required: "Last name is required." })}
+            {...register("lastName")}
+            autoComplete="family-name"
             className={inputClasses}
-            placeholder="Lee"
+            placeholder="Lee (optional)"
           />
         </Field>
       </div>
@@ -231,6 +238,8 @@ export function ContactForm() {
               },
             })}
             type="email"
+            autoComplete="email"
+            inputMode="email"
             className={inputClasses}
             placeholder="jordan@company.com"
           />
@@ -238,6 +247,9 @@ export function ContactForm() {
         <Field label="Phone" error={errors.phone?.message}>
           <input
             {...register("phone", { required: "Phone number is required." })}
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
             className={inputClasses}
             placeholder="(555) 123-4567"
           />
@@ -247,13 +259,21 @@ export function ContactForm() {
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="Company" error={errors.company?.message}>
           <input
-            {...register("company", { required: "Company name is required." })}
+            {...register("company")}
+            autoComplete="organization"
             className={inputClasses}
-            placeholder="Acme Services"
+            placeholder="Acme Services (optional)"
           />
         </Field>
         <Field label="Website">
-          <input {...register("website")} className={inputClasses} placeholder="https://example.com" />
+          <input
+            {...register("website")}
+            type="url"
+            autoComplete="url"
+            inputMode="url"
+            className={inputClasses}
+            placeholder="https://example.com"
+          />
         </Field>
       </div>
 

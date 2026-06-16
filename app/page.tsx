@@ -52,6 +52,27 @@ const sectorFocus = [
   },
 ] as const;
 
+const gettingStartedSteps = [
+  {
+    step: "01",
+    title: "Share what you need",
+    description:
+      "Send a short brief, message on WhatsApp, or book a call if you want to talk it through first.",
+  },
+  {
+    step: "02",
+    title: "Get clear direction",
+    description:
+      "ALX Digital reviews the scope, suggests the best starting point, and outlines realistic next steps.",
+  },
+  {
+    step: "03",
+    title: "Move forward with confidence",
+    description:
+      "Once the scope is clear, you receive a defined proposal, timeline, and delivery path without unnecessary confusion.",
+  },
+] as const;
+
 export default function HomePage() {
   return (
     <div>
@@ -112,6 +133,9 @@ export default function HomePage() {
                 WhatsApp Us
               </TrackedExternalLink>
             </div>
+            <p className="text-sm leading-7 text-slate-400">
+              Not sure where to begin? Start with WhatsApp on mobile or send a short project brief.
+            </p>
           </div>
 
           <div className="section-card rounded-[2rem] p-6 text-slate-950 shadow-2xl shadow-cyan-950/20 sm:p-8">
@@ -142,6 +166,35 @@ export default function HomePage() {
                 Explore services
               </TrackedLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-shell py-16 sm:py-20">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+          <div className="max-w-3xl space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              How it works
+            </p>
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              A simple path from first message to clear project scope.
+            </h2>
+            <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              The site is designed to make the next step obvious, even if you are browsing quickly
+              on a phone and do not yet know exactly which service you need.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {gettingStartedSteps.map((item) => (
+              <article key={item.step} className="rounded-3xl bg-slate-50 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                  Step {item.step}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold text-slate-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
