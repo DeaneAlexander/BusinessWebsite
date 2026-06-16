@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 
 import { TrackedLink } from "@/components/tracking/tracked-link";
-import { portfolioItems } from "@/lib/site";
+import { founderCredentials } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Credentials",
   description:
-    "Review recent conversion-focused website and lead generation work for service businesses across home services, legal, and healthcare.",
+    "Review ALX Digital's academic credentials, technical background, and formal qualifications.",
   openGraph: {
-    title: "Portfolio | ALX Digital Incorporated",
+    title: "Credentials | ALX Digital Incorporated",
     description:
-      "Review recent conversion-focused website and lead generation work for service businesses across home services, legal, and healthcare.",
+      "Review ALX Digital's academic credentials, technical background, and formal qualifications.",
     url: "https://www.alxdigiinc.com/portfolio",
   },
   twitter: {
-    title: "Portfolio | ALX Digital Incorporated",
+    title: "Credentials | ALX Digital Incorporated",
     description:
-      "Review recent conversion-focused website and lead generation work for service businesses across home services, legal, and healthcare.",
+      "Review ALX Digital's academic credentials, technical background, and formal qualifications.",
   },
 };
 
@@ -24,52 +24,72 @@ export default function PortfolioPage() {
   return (
     <div className="container-shell py-16 sm:py-20">
       <section className="space-y-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Portfolio</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+          Credentials
+        </p>
         <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-          Representative work scenarios built to improve lead quality, trust, and booking intent.
+          Formal academic background and professional qualifications.
         </h1>
         <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-          Each engagement balances strategic messaging, conversion design, and practical CRM
-          alignment so the site performs after launch.
+          ALX Digital presents verifiable education credentials and academic distinction in place of
+          fictional project examples or placeholder case studies.
         </p>
         <p className="max-w-3xl text-sm leading-7 text-slate-500">
-          These samples are representative scenarios, not published client case studies. They show
-          the kinds of websites, apps, and consulting engagements ALX Digital can scope and
-          deliver while approved public references are still being assembled.
+          This page is intentionally structured as a professional background summary so prospective
+          clients can review real qualifications, training, and academic achievements with clarity.
         </p>
       </section>
 
-      <section className="mt-12 grid gap-6">
-        {portfolioItems.map((item, index) => (
-          <article
-            key={item.name}
-            className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.75fr_1.25fr]"
-          >
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Project 0{index + 1}
-              </p>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950">{item.name}</h2>
-              <p className="text-sm font-medium text-cyan-700">{item.category}</p>
+      <section className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+        <div className="max-w-4xl space-y-5">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+            Education & Technical Background
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Credentials presented in a straightforward, professional format.
+          </h2>
+          <p className="text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            The following qualifications reflect formal education in computer science and
+            documented academic performance. They serve as part of the trust foundation behind ALX
+            Digital&apos;s work in websites, application delivery, and technical consulting.
+          </p>
+        </div>
+
+        <dl className="mt-10 divide-y divide-slate-200 border-y border-slate-200">
+          {founderCredentials.map((credential) => (
+            <div
+              key={credential.title}
+              className="grid gap-3 py-6 md:grid-cols-[minmax(220px,0.7fr)_minmax(220px,0.9fr)_1fr] md:gap-6"
+            >
+              <dt className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                {credential.title}
+              </dt>
+              <dd className="text-lg font-semibold text-slate-950">{credential.detail}</dd>
+              <dd className="text-sm leading-7 text-slate-600">{credential.note}</dd>
             </div>
-            <div className="space-y-4">
-              <p className="text-lg font-semibold text-slate-950">{item.result}</p>
-              <p className="text-sm leading-8 text-slate-600">{item.description}</p>
-              <p className="text-sm leading-7 text-slate-500">
-                Deliverables included offer strategy, proof hierarchy, page architecture, and
-                stronger handoff into intake and follow-up workflows.
-              </p>
-            </div>
-          </article>
-        ))}
+          ))}
+        </dl>
+
+        <div className="mt-8 max-w-4xl space-y-4 text-sm leading-7 text-slate-600">
+          <p>
+            Public client references and released case studies can be added separately as they
+            become available for publication.
+          </p>
+          <p>
+            Until then, this section keeps the presentation grounded in verified qualifications
+            rather than illustrative or fictional portfolio entries.
+          </p>
+        </div>
       </section>
 
       <section className="mt-12 rounded-[2rem] bg-slate-950 px-5 py-8 text-white sm:px-8 sm:py-10">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">Want similar results?</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">
+              Discuss your project
+            </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Let&rsquo;s map the highest-leverage pages and CTA paths for your business.
+              If you need a capable technical partner, let&apos;s discuss your goals and scope.
             </h2>
           </div>
           <TrackedLink
