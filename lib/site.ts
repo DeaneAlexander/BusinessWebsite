@@ -93,6 +93,24 @@ export const portfolioItems = [
   },
 ] as const;
 
+export const founderCredentials = [
+  {
+    title: "Associate of Science",
+    detail: "Full Sail University",
+    note: "Associate of Science in Computer Science",
+  },
+  {
+    title: "Bachelor of Science",
+    detail: "Full Sail University",
+    note: "Bachelor of Science in Computer Science",
+  },
+  {
+    title: "Academic Distinction",
+    detail: "2022 Salutatorian Award",
+    note: "Recognized for academic performance in Computer Science",
+  },
+] as const;
+
 export const caseStudy = {
   client: "Northline Fitness",
   industry: "Membership and Booking Services",

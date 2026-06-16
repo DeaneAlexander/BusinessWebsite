@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { TrackedExternalLink } from "@/components/tracking/tracked-external-link";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import {
+  founderCredentials,
   marketContext,
   marketKpis,
   portfolioItems,
@@ -288,16 +289,30 @@ export default function HomePage() {
       <section className="container-shell py-16 sm:py-20">
         <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-            Testimonials
+            Education & Technical Background
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            Under Construction
+            Academic Credentials, Training & Qualifications
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">
-            Real client testimonials and approved references will be published here once they are
-            available for public use. Until then, ALX Digital is keeping this section intentionally
-            minimal rather than presenting placeholder endorsements.
+            Until public client references are ready, ALX Digital is leading with verifiable
+            education credentials, formal training, and academic distinction instead of placeholder
+            testimonials. This keeps the trust story grounded in real, checkable achievements.
           </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {founderCredentials.map((credential) => (
+              <article
+                key={credential.title}
+                className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                  {credential.title}
+                </p>
+                <p className="mt-3 text-lg font-semibold text-slate-950">{credential.detail}</p>
+                <p className="mt-2 text-sm leading-7 text-slate-600">{credential.note}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
