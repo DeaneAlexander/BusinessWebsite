@@ -302,15 +302,14 @@ export default function HomePage() {
         <div className="container-shell space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Selected work</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Example work</p>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                Representative work scenarios across websites, apps, support systems, and
-                interactive product builds.
+                Examples of what ALX Digital can help you design, build, and improve.
               </h2>
               <p className="max-w-3xl text-sm leading-7 text-slate-600">
-                These examples are representative scenarios that show the kinds of delivery work
-                ALX Digital can scope and build. Named client case studies and published project
-                references will be added as they are approved for release.
+                These are example service outcomes that show the kinds of websites, applications,
+                and consulting support ALX Digital can provide. They are presented as offer
+                examples rather than named client projects.
               </p>
             </div>
             <TrackedLink
@@ -319,7 +318,7 @@ export default function HomePage() {
               href="/portfolio"
               className="text-sm font-semibold text-slate-950 transition hover:text-cyan-700"
             >
-              View project examples
+              View Portfolio
             </TrackedLink>
           </div>
 

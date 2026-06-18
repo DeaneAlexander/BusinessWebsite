@@ -20,7 +20,8 @@ export const siteConfig = {
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Qualifications" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/qualifications", label: "Qualifications" },
   { href: "/case-study", label: "Case Study" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -71,25 +72,25 @@ export const proofStats = [
 
 export const portfolioItems = [
   {
-    name: "Harbor Booking Platform",
+    name: "Website Design & Lead Capture",
     category: "Web Development",
-    result: "Responsive website with scheduling, service pages, and lead capture",
+    result: "Responsive website with scheduling, service pages, lead capture, and SEO",
     description:
-      "Built a polished business website with booking flows, clear service architecture, and conversion-ready contact paths.",
+      "ALX Digital can help design a polished business website with booking flows, clear service architecture, stronger search visibility, and conversion-ready contact paths.",
   },
   {
-    name: "OpsFlow Dashboard",
+    name: "App Development",
     category: "App Development",
-    result: "Internal tool that reduced repetitive admin work and improved reporting",
+    result: "Custom apps, dashboards, and internal tools built around your workflow",
     description:
-      "Designed and shipped a lightweight dashboard for task management, team visibility, and operational decision-making.",
+      "ALX Digital can help scope and build practical applications that improve team visibility, reduce repetitive admin work, and support better day-to-day operations.",
   },
   {
-    name: "Delivery Architecture Advisory",
+    name: "Technical Consulting",
     category: "Technical Consulting",
-    result: "Clear technical plan, phased rollout, and practical delivery guidance",
+    result: "Expert analysis, technical planning, and practical delivery guidance",
     description:
-      "Worked with the client to define the scope, organize the technical approach, and break the work into realistic phases so the project could move forward clearly and without confusion.",
+      "ALX Digital can help review your requirements, clarify scope, assess technical options, and structure a realistic path forward before unnecessary time or money is spent.",
   },
 ] as const;
 
