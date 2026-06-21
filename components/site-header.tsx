@@ -7,7 +7,7 @@ import { navigation, siteConfig } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur">
+    <header className="relative sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -36,11 +36,11 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-4 lg:pl-4">
-          <details className="relative lg:hidden">
+          <details className="static lg:hidden">
             <summary className="inline-flex list-none items-center justify-center rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/5 [&::-webkit-details-marker]:hidden">
               Menu
             </summary>
-            <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-[min(24rem,calc(100vw-2rem))] rounded-[1.75rem] border border-white/10 bg-slate-950 p-4 shadow-2xl shadow-slate-950/40">
+            <div className="absolute inset-x-4 top-[calc(100%+0.75rem)] z-50 rounded-[1.75rem] border border-white/10 bg-slate-950 p-4 shadow-2xl shadow-slate-950/40 sm:inset-x-6">
               <nav className="grid gap-2">
                 {navigation.map((item) => (
                   <Link
