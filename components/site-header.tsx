@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,6 +10,8 @@ import { TrackedLink } from "@/components/tracking/tracked-link";
 import { navigation, siteConfig } from "@/lib/site";
 
 export function SiteHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="relative sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-4 sm:px-6 lg:px-8">
@@ -36,16 +42,24 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-4 lg:pl-4">
-          <details className="static lg:hidden">
-            <summary className="inline-flex list-none items-center justify-center rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/5 [&::-webkit-details-marker]:hidden">
+          <div className="static lg:hidden">
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen((current) => !current)}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle navigation menu"
+              className="inline-flex list-none items-center justify-center rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white/5"
+            >
               Menu
-            </summary>
-            <div className="absolute inset-x-4 top-[calc(100%+0.75rem)] z-50 rounded-[1.75rem] border border-white/10 bg-slate-950 p-4 shadow-2xl shadow-slate-950/40 sm:inset-x-6">
+            </button>
+            {isMenuOpen ? (
+              <div className="absolute inset-x-4 top-[calc(100%+0.75rem)] z-50 rounded-[1.75rem] border border-white/10 bg-slate-950 p-4 shadow-2xl shadow-slate-950/40 sm:inset-x-6">
               <nav className="grid gap-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
                     className="rounded-2xl border border-white/10 px-4 py-3 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:bg-white/5 hover:text-white"
                   >
                     {item.label}
@@ -58,6 +72,7 @@ export function SiteHeader() {
                   eventName="contact_cta_click"
                   eventParams={{ cta_location: "mobile_menu", cta_type: "contact" }}
                   href="/contact"
+                  onClick={() => setIsMenuOpen(false)}
                   className="inline-flex items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
                 >
                   Get Proposal
@@ -68,13 +83,15 @@ export function SiteHeader() {
                   href={siteConfig.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
                   className="inline-flex items-center justify-center rounded-full border border-white/15 px-4 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
                 >
                   WhatsApp
                 </TrackedExternalLink>
               </div>
-            </div>
-          </details>
+              </div>
+            ) : null}
+          </div>
           <TrackedLink
             eventName="contact_cta_click"
             eventParams={{ cta_location: "header", cta_type: "contact" }}

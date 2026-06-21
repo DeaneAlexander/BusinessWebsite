@@ -1,13 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/lib/site";
 import { TrackedExternalLink } from "@/components/tracking/tracked-external-link";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 
+const APPEAR_DELAY_MS = 3000;
+
 export function StickyCta() {
+  const [isReady, setIsReady] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const timerId = window.setTimeout(() => {
+      setIsReady(true);
+    }, APPEAR_DELAY_MS);
+
+    return () => window.clearTimeout(timerId);
+  }, []);
+
+  if (!isReady) {
+    return null;
+  }
 
   if (!isOpen) {
     return (
