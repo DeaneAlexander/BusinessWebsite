@@ -300,26 +300,16 @@ export default function HomePage() {
 
       <section className="bg-white py-16 sm:py-20">
         <div className="container-shell space-y-10">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Example work</p>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                Examples of what ALX Digital can help you design, build, and improve.
-              </h2>
-              <p className="max-w-3xl text-sm leading-7 text-slate-600">
-                These are example service outcomes that show the kinds of websites, applications,
-                and consulting support ALX Digital can provide. They are presented as offer
-                examples rather than named client projects.
-              </p>
-            </div>
-            <TrackedLink
-              eventName="portfolio_cta_click"
-              eventParams={{ cta_location: "home_portfolio_header", cta_type: "portfolio" }}
-              href="/portfolio"
-              className="text-sm font-semibold text-slate-950 transition hover:text-cyan-700"
-            >
-              View Portfolio
-            </TrackedLink>
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">Example work</p>
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              Examples of what ALX Digital can help you design, build, and improve.
+            </h2>
+            <p className="max-w-3xl text-sm leading-7 text-slate-600">
+              These are example service outcomes that show the kinds of websites, applications,
+              and consulting support ALX Digital can provide. They are presented as offer examples
+              rather than named client projects.
+            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">

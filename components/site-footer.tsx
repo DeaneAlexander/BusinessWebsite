@@ -15,7 +15,7 @@ export function SiteFooter() {
             aria-label={siteConfig.name}
           >
             <Image
-              src="/alx_digital_incorporated_logo_e844c186.png"
+              src="/Logo%20Fixed.jpg"
               alt={siteConfig.name}
               fill
               className="object-contain object-left"
